@@ -7,7 +7,7 @@ public class Tarefa {
     private boolean concluida;
 
     /**
-     * Construtor da classe Tarefa.
+     * <b>Construtor da classe Tarefa.</b>
      *
      * @param titulo Título da tarefa
      * @param descricao Descrição da tarefa

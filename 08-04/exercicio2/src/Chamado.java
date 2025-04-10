@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Chamado {
     /** Variável identificadora */
@@ -13,7 +14,7 @@ public class Chamado {
     private LocalDate dataFechamento;
 
     /**
-     * Função que abre um chamado.
+     * Construtor da classe Chamado
      *
      * @param id Variável identificadora
      * @param descricao Parâmetro da descrição
@@ -26,5 +27,65 @@ public class Chamado {
         this.responsavel = responsavel;
         this.dataAbertura = dataAbertura;
         this.dataFechamento = null;
+    }
+
+    /**
+     * Função que fecha o chamado.
+     */
+    public void fecharChamado(LocalDate dataFechamento) {
+        this.dataFechamento = dataFechamento;
+    }
+
+    /**
+     * Função que verifica o estado do chamado. {@code Chamado} aberto, {@code Chamado} fechado.
+     */
+    public boolean estaAberto() {
+        return dataFechamento == null;
+    }
+
+    /**
+     * Função que retorna o id do chamado.
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Função que retorna a descrição do chamado
+     */
+    public String getDescricao() {
+        return descricao;
+    }
+
+    /**
+     * Função que retorna o responsável do chamado
+     */
+    public String getResponsavel() {
+        return responsavel;
+    }
+
+    /**
+     * Função que retorna a data de abertura do chamado
+     */
+    public LocalDate getDataAbertura() {
+        return dataAbertura;
+    }
+
+    /**
+     * Função que retorna a data de fechamento do chamado
+     */
+    public LocalDate getDataFechamento() {
+        return dataFechamento;
+    }
+
+    /**
+     * Função que retorna a duração do chamado em dias.
+     */
+    public long getDuracao() {
+        if (dataFechamento != null) {
+            return ChronoUnit.DAYS.between(dataAbertura, dataFechamento);
+        } else {
+            return -1;
+        }
     }
 }

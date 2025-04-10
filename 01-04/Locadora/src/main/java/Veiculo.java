@@ -1,6 +1,3 @@
-import java.text.DecimalFormat;
-import java.util.Locale;
-
 public class Veiculo {
     String modelo;
     double valorDiaria;
@@ -19,7 +16,7 @@ public class Veiculo {
         return dias <= 7 ? 1 : desconto;
     }
 
-    public double calculaMultas(int diasDeUso, int diasDeAtraso){
+    public double calculaValorTotal(int diasDeUso, int diasDeAtraso){
         double juroPorDia = 0.2;
         double total = custoVeiculo(diasDeUso);
         for (int i = 0; i < diasDeAtraso; i++){

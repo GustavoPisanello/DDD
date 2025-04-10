@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        insereDados();
+        System.out.print(insereDados());
     }
-    public static void insereDados(){
+
+    public static String insereDados(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Insira o modelo do veículo: ");
         String modelo = sc.nextLine();
@@ -19,7 +20,7 @@ public class Main {
         System.out.println("Insira os dias de atraso do veículo: ");
         int diasDeAtraso = sc.nextInt();
 
-        System.out.printf("%.2f", vel.calculaMultas(diasDeUso, diasDeAtraso));
+        return (String.format("O valor à pagar é de: R$ %.2f", vel.calculaValorTotal(diasDeUso, diasDeAtraso)));
 
     }
 }
