@@ -55,7 +55,7 @@ Após compilar e testar, você pode rodar o exemplo principal que integra todas 
 mvn clean compile
 
 # Executar a classe principal
-mvn exec:java -Dexec.mainClass="com.example.clinic.App"
+mvn exec:java -Dexec.mainClass="App"
 ```
 
 ### Pré-requisitos de ambiente
@@ -74,3 +74,16 @@ export ORACLE_PASSWORD="oracle"
 3. Aplica todas as **regras de negócio** (antecedência, horário comercial, duração mínima, sem conflito).
 4. Persiste no Oracle via JDBC.
 5. Exibe no console o ID gerado ou mensagem de erro de validação.
+
+
+-- Evoluções possíveis para o projeto --
+
+1. Criar services para gerir as regras de negócio de pacientes e médicos;
+2. Notificação de consultas por e-mail;
+3. CRUD de médicos, agendamentos e pacientes (está incompleto).
+
+-- Evoluções aplicadas no projeto -- 
+
+1. Reestruturação de pacotes;
+2. Interface no console mais "user-friendly";
+3. Possibilidade de inserção de médicos, pacientes e consultas, com persistência no banco de dados.
